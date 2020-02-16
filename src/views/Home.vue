@@ -20,6 +20,7 @@ export default {
     this.$axios.post('/login?', this.$qs.stringify(param)).then(res => {
       if (res.data.success) {
         console.log(res.data.data)
+        this.$store.state.num=res.data.data
       } else {
       }
     })
