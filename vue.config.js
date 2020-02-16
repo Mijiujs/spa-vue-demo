@@ -14,10 +14,12 @@ module.exports = {
   },
   configureWebpack: {
     externals: {
-    //   vue: 'Vue',
-    //   vuex: 'Vuex',
-    //   'vue-router': 'VueRouter',
-    // 'element-ui': 'ElementUI'
+      vue: 'Vue',
+      vuex: 'Vuex',
+      'vue-router': 'VueRouter',
+      'element-ui': 'ELEMENT',
+      axios: 'axios',
+      qs: 'Qs'
     },
     plugins: [
       new CompressionPlugin({
