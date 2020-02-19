@@ -5,7 +5,8 @@ import store from './store'
 import axios from 'axios'
 import ElementUI from 'element-ui'
 import qs from 'qs'
-
+// ,
+//       "@vue/standard"
 Vue.use(ElementUI)
 
 Vue.prototype.$axios = axios

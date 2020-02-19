@@ -1,17 +1,21 @@
 const CompressionPlugin = require('compression-webpack-plugin')
 
 module.exports = {
-  publicPath: '/',
-  lintOnSave: false,
-  pwa: {
-    iconPaths: {
-      favicon32: 'favicon.ico',
-      favicon16: 'favicon.ico',
-      appleTouchIcon: 'favicon.ico',
-      maskIcon: 'favicon.ico',
-      msTileImage: 'favicon.ico'
-    }
-  },
+  publicPath: '/', // 部署应用包的子路径
+  outputDir: 'dist', // npm run build生成的生产环境构建目录的文件
+  assetsDir: '', // js,css静态资源被放置的目录 (相对于 outputDir)
+  indexPath: 'index.html', // 指定生成的 index.html 的输出路径 (相对于 outputDir)
+  lintOnSave: false, // 开发环境eslint保存时检验
+  runtimeCompiler: false, // 运行时加编译器，不加体积更小vue推荐
+  // pwa: {
+  //   iconPaths: {
+  //     favicon32: 'favicon.ico',
+  //     favicon16: 'favicon.ico',
+  //     appleTouchIcon: 'favicon.ico',
+  //     maskIcon: 'favicon.ico',
+  //     msTileImage: 'favicon.ico'
+  //   }
+  // },
   configureWebpack: {
     externals: {
       vue: 'Vue',
