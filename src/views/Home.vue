@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
-    <el-button>默认按钮</el-button>
-    <div>{{$store.state.num}}</div>
+    <el-button  @click="change">默认按钮</el-button>
+    <div class="test">{{$store.state.num}}</div>
   </div>
 </template>
 
@@ -23,6 +23,11 @@ export default {
       } else {
       }
     })
-  }
+  },
+  methods: {
+    change(){
+      this.$('.test').toggle()
+    }
+  },
 }
 </script>

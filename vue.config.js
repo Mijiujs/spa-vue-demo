@@ -22,8 +22,9 @@ module.exports = {
       vuex: 'Vuex',
       'vue-router': 'VueRouter',
       'element-ui': 'ELEMENT',
+      jquery: '$',
       axios: 'axios',
-      qs: 'Qs'
+      qs: 'Qs',
     },
     plugins: [
       new CompressionPlugin({
@@ -35,5 +36,5 @@ module.exports = {
   },
   devServer: {
     port: 8080
-  }
+  },
 }
