@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/css">Css</router-link>
+      <router-link to="/">home</router-link> |
+      <router-link to="/about">about</router-link> |
+      <router-link to="/css">css</router-link> |
+      <router-link to="/chart">chart</router-link>
     </div>
     <router-view/>
   </div>
@@ -29,7 +30,7 @@ body{
 }
 #nav {
   padding: 30px;
-
+  text-align: center;
   a {
     font-weight: bold;
     color: #2c3e50;

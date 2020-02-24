@@ -6,6 +6,7 @@ import axios from 'axios'
 import ElementUI from 'element-ui'
 import qs from 'qs'
 import $ from 'jquery';
+import echarts from 'echarts'
 // ,
 //       "@vue/standard"
 Vue.use(ElementUI)
@@ -13,6 +14,7 @@ Vue.use(ElementUI)
 Vue.prototype.$axios = axios
 Vue.prototype.$qs = qs
 Vue.prototype.$ = $
+Vue.prototype.$echarts = echarts
 
 axios.defaults.withCredentials = true// 跨域
 axios.defaults.baseURL = process.env.VUE_APP_BASE_URL

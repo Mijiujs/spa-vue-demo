@@ -25,6 +25,7 @@ module.exports = {
       jquery: '$',
       axios: 'axios',
       qs: 'Qs',
+      echarts: 'echarts'
     },
     plugins: [
       new CompressionPlugin({

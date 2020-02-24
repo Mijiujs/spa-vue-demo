@@ -26,7 +26,6 @@ export default {
       return x + y;
     }
     let fn = curry(add);
-    // console.log(fn(3, 4));
     console.log(fn(3)(4));
   }
 };
