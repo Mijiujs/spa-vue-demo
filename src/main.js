@@ -16,12 +16,22 @@ Vue.prototype.$qs = qs
 Vue.prototype.$ = $
 Vue.prototype.$echarts = echarts
 
-axios.defaults.withCredentials = true// 跨域
 axios.defaults.baseURL = process.env.VUE_APP_BASE_URL
-axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded'
+axios.defaults.timeout = 5000
+axios.defaults.withCredentials = true// 跨域
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 
 Vue.config.productionTip = false
-// 401回登录页面
+// 添加请求拦截器
+axios.interceptors.request.use(function (config) {
+  // 在发送请求之前做些什么
+  return config;
+}, function (error) {
+  // 对请求错误做些什么
+  return Promise.reject(error);
+});
+
+// 添加响应拦截器
 axios.interceptors.response.use(response => {
   return response
 }, error => {
