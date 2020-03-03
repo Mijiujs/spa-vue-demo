@@ -23,13 +23,30 @@ const routes = [
         name: 'curry',
         component:()=>import('../views/js/curry.vue')
       }
-
     ]
   },
   {
     path: '/css',
     name: 'css',
-    component: () => import(/* webpackChunkName: "about" */ '../views/css.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/layout.vue'),
+    redirect: '/css/center',
+    children: [
+      {
+        path: 'center',
+        name: 'center',
+        component:()=>import('../views/css/center.vue')
+      },
+      {
+        path: 'twoColumnLayout',
+        name: 'twoColumnLayout',
+        component:()=>import('../views/css/twoColumnLayout.vue')
+      },
+      {
+        path: 'threeColumnLayout',
+        name: 'threeColumnLayout',
+        component:()=>import('../views/css/threeColumnLayout.vue')
+      }
+    ]
   },
   {
     path: '/chart',
