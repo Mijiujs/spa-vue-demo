@@ -22,6 +22,11 @@ const routes = [
         path: 'curry',
         name: 'curry',
         component:()=>import('../views/js/curry.vue')
+      },
+      {
+        path: 'promise',
+        name: 'promise',
+        component:()=>import('../views/js/promise.vue')
       }
     ]
   },

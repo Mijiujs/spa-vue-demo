@@ -2,6 +2,7 @@
   <div>
     <div id="nav" v-if="way==='js'">
       <router-link to="curry">curry</router-link>|
+      <router-link to="promise">promise</router-link>|
     </div>
     <div id="nav" v-if="way==='css'">
       <router-link to="center">居中</router-link>|
