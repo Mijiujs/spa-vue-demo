@@ -1,20 +1,14 @@
-import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import axios from 'axios'
-import ElementUI from 'element-ui'
-import qs from 'qs'
-import $ from 'jquery';
-import echarts from 'echarts'
-// ,
+// import Vue from 'vue'
+// import axios from 'axios'
+// import ElementUI from 'element-ui'
+// import qs from 'qs'
+// import $ from 'jquery';
+// import echarts from 'echarts'
+// Vue、Vuex、VueRouter、ELEMENT、$、axios、Qs、echarts可以直接引用
 //       "@vue/standard"
-Vue.use(ElementUI)
-
-Vue.prototype.$axios = axios
-Vue.prototype.$qs = qs
-Vue.prototype.$ = $
-Vue.prototype.$echarts = echarts
 
 axios.defaults.baseURL = process.env.VUE_APP_BASE_URL
 axios.defaults.timeout = 5000
@@ -42,6 +36,7 @@ axios.interceptors.response.use(response => {
     }
   }
 })
+
 router.beforeEach((to, from, next) => {
   if (to.path === '/') {
     // sessionStorage.removeItem('userInfo')
