@@ -1,27 +1,23 @@
 <template>
   <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
-    <el-button  @click="change">默认按钮</el-button>
-    <child :str="str" :str2="str2" @sunMethod="haha" ref="child"></child>
+    <el-button @click="change">默认按钮</el-button>
+    <div class="my">haha</div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
-import child from "@/components/child";
 export default {
-  name: 'Home',
+  name: "Home",
   data() {
     return {
-      str:'test',
-      str2:'test2'
-    }
+      str: "test",
+      str2: "test2",
+      a: null
+    };
   },
-  components: {
-   child
-  },
-  mounted () {
+  mounted() {
     // let param = {
     //   username: 'admin',
     //   password: 'admin@knoten2020'
@@ -32,14 +28,19 @@ export default {
     //   } else {
     //   }
     // })
+    $(function() {
+      $(".my").animate(
+        {
+          left: "100px"
+        },
+        "slow"
+      );
+    });
   },
   methods: {
-    change(){
-      this.$('.test').toggle()
-    },
-    haha(e){
-      console.log(e)
-    }
-  },
-}
+    change() {}
+  }
+};
 </script>
+<style lang="scss" scoped>
+</style>
