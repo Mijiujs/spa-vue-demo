@@ -29,6 +29,16 @@ const router = new VueRouter({
           path: 'promise',
           name: 'promise',
           component: () => import('../views/js/promise.vue')
+        },
+        {
+          path: 'proxy',
+          name: 'proxy',
+          component: () => import('../views/js/proxy.vue')
+        },
+        {
+          path: 'reflect',
+          name: 'reflect',
+          component: () => import('../views/js/reflect.vue')
         }
       ]
     },
