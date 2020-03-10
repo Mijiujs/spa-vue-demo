@@ -1,40 +1,27 @@
 <template>
   <div>
-    <h1>reflect</h1>
+    <h1>1.把Object对象上上属于语言内部的方法放到Reflect对象上</h1>
+    <h1>2.让返回结果更合理。Object.defineProperty(obj, name, desc)在无法定义属性时，会抛出一个错误，而Reflect.defineProperty(obj, name, desc)则会返回false。</h1>
+    <h1>3.让部分操作都变成函数行为。name in obj和delete obj[name]变成Reflect.has(obj,name)，Reflect.deleteProperty(obj,name)</h1>
+    <h1>4.Reflect对象的方法与Proxy对象的方法一一对应，只要是Proxy对象的方法，就能在Reflect对象上找到对应的方法</h1>
   </div>
 </template>
 <script>
 export default {
   mounted() {
-    let obj = {
-      a: 1,
-      b: 2,
-      c: 3
-    };
-    let proxy = new Proxy(obj, {
-      get(target, propKey, receiver) {
-        // 参数依次为目标对象，属性名，proxy实例
-        if (propKey in target) {
-          return target[propKey];
-        } else {
-          throw new ReferenceError("不存在该属性");
-        }
-      },
-      set(target, property, value, receiver) {
-        return value;
-      },
-      has(target, propKey) {}, // 拦截propKey in proxy
-      deleteProperty(target, propKey) {}, // 拦截delete proxy[propkey]
-      ownKeys(target) {}, // 拦截器Object.getOwnPropertyNames()、Object.getOwnPropertyDescriptors()、Object.keys(proxy)、for in
-      getOwnPropertyDescriptor(target, propKey) {}, // 拦截Object.getOwnPropertyDescriptor(proxy, propKey)
-      defineProperty(target, propKey, propDesc) {}, // 拦截Object.defineProperty(proxy, propKey, propDesc）、Object.defineProperties(proxy, propDescs)
-      getPrototypeOf(target) {}, // 拦截Object.getPrototypeOf(proxy)
-      setPrototypeOf(target, proto) {}, // 拦截Object.setPrototypeOf(proxy, proto)
-      preventExtensions(target) {}, // 拦截Object.preventExtensions(proxy)
-      isExtensible(target) {}, // 拦截Object.isExtensible(proxy)
-      apply(target, object, args) {}, // 拦截 Proxy 实例作为函数调用的操作，比如proxy(...args)、proxy.call(object, ...args)、proxy.apply(...)
-      construct(target, args) {} // 拦截 Proxy 实例作为构造函数调用的操作，比如new proxy(...args)
-    });
+    // Reflect.apply(target, thisArg, args);
+    // Reflect.construct(target, args);
+    // Reflect.get(target, name, receiver);
+    // Reflect.set(target, name, value, receiver);
+    // Reflect.defineProperty(target, name, desc);
+    // Reflect.deleteProperty(target, name);
+    // Reflect.has(target, name);
+    // Reflect.ownKeys(target);
+    // Reflect.isExtensible(target);
+    // Reflect.preventExtensions(target);
+    // Reflect.getOwnPropertyDescriptor(target, name);
+    // Reflect.getPrototypeOf(target);
+    // Reflect.setPrototypeOf(target, prototype);
   }
 };
 </script>

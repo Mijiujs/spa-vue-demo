@@ -22,20 +22,26 @@ export default {
     //   username: 'admin',
     //   password: 'admin@knoten2020'
     // }
-    // this.$axios.post('/login?', this.$qs.stringify(param)).then(res => {
+    axios.get('/user?id=1').then(res => {
+      if (res.data.success) {
+      } else {
+      }
+    })
+    // axios.post("/user",{name:'接口插入',sex:'what'}).then(res => {
     //   if (res.data.success) {
-    //     this.$store.state.num = res.data.data
     //   } else {
     //   }
-    // })
-    $(function() {
-      $(".my").animate(
-        {
-          left: "100px"
-        },
-        "slow"
-      );
-    });
+    // });
+    // axios.put("/user", { id: 4, name: "修改", sex: "HHH" }).then(res => {
+    //   if (res.data.success) {
+    //   } else {
+    //   }
+    // });
+    // axios.delete("/user?id=4").then(res => {
+    //   if (res.data.success) {
+    //   } else {
+    //   }
+    // });
   },
   methods: {
     change() {}
