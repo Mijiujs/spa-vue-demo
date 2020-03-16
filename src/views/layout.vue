@@ -5,6 +5,7 @@
       <router-link to="promise">promise</router-link>|
       <router-link to="proxy">proxy</router-link>|
       <router-link to="reflect">reflect</router-link>|
+      <router-link to="fn">fn</router-link>|
     </div>
     <div id="nav" v-if="way==='css'">
       <router-link to="center">居中</router-link>|

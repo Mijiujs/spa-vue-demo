@@ -39,6 +39,11 @@ const router = new VueRouter({
           path: 'reflect',
           name: 'reflect',
           component: () => import('../views/js/reflect.vue')
+        },
+        {
+          path: 'fn',
+          name: 'fn',
+          component: () => import('../views/js/fn.vue')
         }
       ]
     },
