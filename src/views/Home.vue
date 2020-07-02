@@ -8,16 +8,6 @@
 <script>
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
-import mqtt from "mqtt";
-const options = {
-  connectTimeout: 40000,
-  clientId: "mqtitId-web",
-  username: "admin",
-  password: "admin123",
-  clean: true
-};
-let client = mqtt.connect("ws://localhost/mqtt",options);
-
 export default {
   name: "Home",
   data() {

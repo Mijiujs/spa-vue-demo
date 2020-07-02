@@ -9,8 +9,7 @@
     "test": "vue-cli-service serve --mode test"
   },
   "dependencies": {
-    "core-js": "^3.6.4",
-    "mqtt": "^3.0.0"
+    "core-js": "^3.6.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.2.0",
