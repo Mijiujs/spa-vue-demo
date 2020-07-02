@@ -43,24 +43,6 @@ export default {
     //   } else {
     //   }
     // });
-    client.on("connenc", function(err) {
-      console.log(err);
-      console.log("连接上了");
-      // 建立连接，可以订阅和发布消息
-      client.subscribe("test");
-    });
-    client.on("message", function(topic, message) {
-      //接收到订阅的主题的消息
-      conosole.log("message.toString()");
-    });
-    // 断开发起重连
-    client.on("reconnect", error => {
-      console.log("正在重连:", error);
-    });
-    // 链接异常处理
-    client.on("error", error => {
-      console.log("连接失败:", error);
-    });
   },
   methods: {
     change() {}

@@ -1,21 +1,26 @@
-import App from './App.vue'
-import router from './router'
-import store from './store'
+// 以前这些通过npm安装后import引用，现在cdn引用后这些挂载到了全局，可以直接使用
 // import Vue from 'vue'
 // import axios from 'axios'
 // import ElementUI from 'element-ui'
 // import qs from 'qs'
 // import $ from 'jquery';
 // import echarts from 'echarts'
-// Vue、Vuex、VueRouter、ELEMENT、$、axios、Qs、echarts可以直接引用
-//       "@vue/standard"
+import App from './App.vue'
+import router from './router'
+import store from './store'
+// "@vue/standard"
+// 本地引入element css文件
+import '../src/assets/css/index.css'
 
-axios.defaults.baseURL = process.env.VUE_APP_BASE_URL
+import api from '@/assets/js/api.js'
+console.log(api)
+
+Vue.config.productionTip = false // 阻止显示生产模式的消息
+
+axios.defaults.baseURL = process.env.VUE_APP_BASEURL
 axios.defaults.timeout = 5000
-// axios.defaults.withCredentials = true// 跨域
-axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
-
-Vue.config.productionTip = false
+// axios.defaults.withCredentials = true
+// axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 // 添加请求拦截器
 axios.interceptors.request.use(function (config) {
   // 在发送请求之前做些什么

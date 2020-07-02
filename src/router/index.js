@@ -9,15 +9,12 @@ const router = new VueRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import(/* webpackChunkName: "about" */ '../views/home.vue')
+      component: () => import(/* webpackChunkName: "home" */ '../views/home.vue')
     },
     {
       path: '/js',
       name: 'js',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ '../views/layout.vue'),
+      component: () => import(/* webpackChunkName: "js" */ '../views/layout.vue'),
       redirect: '/js/curry',
       children: [
         {
