@@ -11,11 +11,13 @@ import store from './store'
 // "@vue/standard"
 // 本地引入element css文件
 import '../src/assets/css/index.css'
-
+import '@webuy/coral-icon/lib/index.css';
+import CoralIcon from '@webuy/coral-icon/lib/component-vue'
 import api from '@/assets/js/api.js'
 console.log(api)
 
 Vue.config.productionTip = false // 阻止显示生产模式的消息
+Vue.use(CoralIcon);
 
 axios.defaults.baseURL = process.env.VUE_APP_BASEURL
 axios.defaults.timeout = 5000

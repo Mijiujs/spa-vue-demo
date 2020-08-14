@@ -2,12 +2,15 @@
   <div class="home">
     <el-button @click="change">默认按钮</el-button>
     <div class="my">haha</div>
+    <coral-icon name="edit" :style="{ color: 'blue' }"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
+import CoralIcon from '@webuy/coral-icon/lib/component-vue'
+
 export default {
   name: "Home",
   data() {
@@ -16,6 +19,9 @@ export default {
       str2: "test2",
       a: null
     };
+  },
+   components: {
+    CoralIcon,
   },
   mounted() {
     console.log(11);

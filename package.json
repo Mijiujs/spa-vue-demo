@@ -9,6 +9,7 @@
     "test": "vue-cli-service serve --mode test"
   },
   "dependencies": {
+    "@webuy/coral-icon": "^1.2.1",
     "core-js": "^3.6.4"
   },
   "devDependencies": {
