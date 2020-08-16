@@ -10,7 +10,7 @@ import store from './store'
 // "@vue/standard"
 // 本地引入element css文件
 import '../src/assets/css/index.css'
-import api from '@/assets/js/api.js'
+import api from '@/api/index.js'
 
 Vue.config.productionTip = false // 阻止显示生产模式的消息
 
