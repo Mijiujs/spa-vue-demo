@@ -3,7 +3,6 @@
 // import axios from 'axios'
 // import ElementUI from 'element-ui'
 // import qs from 'qs'
-// import $ from 'jquery';
 // import echarts from 'echarts'
 import App from './App.vue'
 import router from './router'
@@ -11,24 +10,27 @@ import store from './store'
 // "@vue/standard"
 // 本地引入element css文件
 import '../src/assets/css/index.css'
-import '@webuy/coral-icon/lib/index.css';
-import CoralIcon from '@webuy/coral-icon/lib/component-vue'
 import api from '@/assets/js/api.js'
-console.log(api)
 
 Vue.config.productionTip = false // 阻止显示生产模式的消息
-Vue.use(CoralIcon);
 
 axios.defaults.baseURL = process.env.VUE_APP_BASEURL
 axios.defaults.timeout = 5000
+
+Vue.prototype.$axios = axios
+// Vue.prototype.$qs = qs
+Vue.prototype.$api = api
 // axios.defaults.withCredentials = true
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
+
+Vue.filter('nullExplain', function (param) {
+  return param==null ? '无' : param
+})
+
 // 添加请求拦截器
 axios.interceptors.request.use(function (config) {
-  // 在发送请求之前做些什么
   return config;
 }, function (error) {
-  // 对请求错误做些什么
   return Promise.reject(error);
 });
 
@@ -46,7 +48,6 @@ axios.interceptors.response.use(response => {
 
 router.beforeEach((to, from, next) => {
   if (to.path === '/') {
-    // sessionStorage.removeItem('userInfo')
   }
   next()
 })

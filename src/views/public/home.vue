@@ -1,15 +1,20 @@
 <template>
   <div class="home">
+    <div id="nav">
+      <router-link to="/">login</router-link>|
+      <router-link to="/home">home</router-link>|
+      <router-link to="/js">js</router-link>|
+      <router-link to="/css">css</router-link>|
+      <router-link to="/chart">chart</router-link>
+    </div>
     <el-button @click="change">默认按钮</el-button>
     <div class="my">haha</div>
-    <coral-icon name="edit" :style="{ color: 'blue' }"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
-import CoralIcon from '@webuy/coral-icon/lib/component-vue'
 
 export default {
   name: "Home",
@@ -17,11 +22,8 @@ export default {
     return {
       str: "test",
       str2: "test2",
-      a: null
+      a: null,
     };
-  },
-   components: {
-    CoralIcon,
   },
   mounted() {
     console.log(11);
@@ -51,8 +53,8 @@ export default {
     // });
   },
   methods: {
-    change() {}
-  }
+    change() {},
+  },
 };
 </script>
 <style lang="scss" scoped>

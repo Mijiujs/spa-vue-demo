@@ -8,8 +8,23 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
+      name: 'login',
+      component: () => import(/* webpackChunkName: "login" */ '@/views/public/login.vue')
+    },
+    {
+      path: '/forgetPwd',
+      name: 'forgetPwd',
+      component: () => import(/* webpackChunkName: "forgetPwd" */ '@/views/public/forgetPwd.vue')
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: () => import(/* webpackChunkName: "register" */ '@/views/public/register.vue')
+    },
+    {
+      path: '/home',
       name: 'home',
-      component: () => import(/* webpackChunkName: "home" */ '../views/home.vue')
+      component: () => import(/* webpackChunkName: "home" */ '@/views/public/home.vue')
     },
     {
       path: '/js',
