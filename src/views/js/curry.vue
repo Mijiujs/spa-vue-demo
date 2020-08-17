@@ -10,7 +10,51 @@ export default {
     return {};
   },
   methods: {},
-  beforeMount() {},
+  beforeMount() {
+    function myTime(time, n) {
+      setTimeout(() => {
+        console.log(n);
+      }, time);
+    }
+    async function myFn() {
+      await myTime(1000, 1);
+      await myTime(2000, 2);
+      await myTime(1000, 3);
+      return "promise";
+    }
+    myFn().then((res) => {
+      console.log(res);
+    });
+
+    function fn(a, b, c) {
+      console.log(a + b + c);
+      return a + b + c;
+    }
+    function currying(fn, ...arr1) {
+      return function (...arr2) {
+        let arr = [...arr1, ...arr2];
+        if (arr.length < fn.length) {
+          return currying(fn, ...arr);
+        } else {
+          fn.apply(this, arr);
+        }
+      };
+    }
+    let add1 = currying(fn);
+    add1(1, 2, 3);
+    add1(1)(2)(9);
+
+    function multi(...arr1) {
+      let fn = function (...arr2) {
+        let arr = [...arr1, ...arr2];
+        return multi.apply(this, arr);
+      };
+      fn.toString = function () {
+        return arr1.reduce((a, b) => a * b);
+      };
+      return fn;
+    }
+  },
   mounted() {
     // function curry(fn, ...arg1) {
     //   return function(...arg2) {
@@ -31,16 +75,16 @@ export default {
       return a * b * c;
     }
     function curry(fn, ...arg1) {
-      return function(...arg2) {
+      return function (...arg2) {
         let newArr = [...arg1, ...arg2];
-        if(newArr.length===3){
-          return fn.apply(this,newArr)
-        }else{
-          return curry.apply(this,[fn,...newArr])
+        if (newArr.length === 3) {
+          return fn.apply(this, newArr);
+        } else {
+          return curry.apply(this, [fn, ...newArr]);
         }
       };
     }
-    let fn = curry(multiplicate)
-  }
+    let fn = curry(multiplicate);
+  },
 };
 </script>
